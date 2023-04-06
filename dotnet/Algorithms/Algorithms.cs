@@ -14,5 +14,32 @@
 
             return false;
         }
+
+        public static bool BinarySearch(int[] haystack, int needle)
+        {
+            int low = 0;
+            int high = haystack.Length;
+
+            do
+            {
+                var middle = (int)Math.Floor((double)(low + (high - low) / 2));
+                var value = haystack[middle];
+                if( value == needle)
+                {
+                    return true;
+                }
+                else if(value > needle)
+                {
+                    high = middle;
+                }
+                else
+                {
+                    low = middle + 1;
+                }
+
+            } while (low < high);
+
+            return false;
+        }
     }
 }
