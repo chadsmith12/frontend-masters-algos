@@ -1,4 +1,4 @@
-import { linearsearch} from '../src/algorithms/linearsearch.js';
+import { binarysearch} from '../src/algorithms/binarysearch.js';
 
 describe('greeter function', () => {
   const values = [1,2,3,4,5];
@@ -7,13 +7,13 @@ describe('greeter function', () => {
 
   // Assert if setTimeout was called properly
   it('returns true with a correct value', () => {
-    const found = linearsearch(values, correctValue)
+    const found = binarysearch(values, correctValue)
     expect(found).toBe(true)
   });
 
   // Assert greeter result
   it('returns false with a wrong value', () => {
-    const found = linearsearch(values, wrongValue)
+    const found = binarysearch(values, wrongValue)
     expect(found).toBe(false)
   });
 });
