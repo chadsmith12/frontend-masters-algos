@@ -69,5 +69,21 @@
 
             return -1;
         }
+
+        public static void BubbleSort(int[] values)
+        {
+            for(var i = 0; i < values.Length; ++i)
+            {
+                for(var j = 0; j < values.Length - 1 - i; ++j)
+                {
+                    if (values[j] > values[j + 1])
+                    {
+                        var temp = values[j];
+                        values[j] = values[j + 1];
+                        values[j + 1] = temp;
+                    }
+                }
+            }
+        }
     }
 }

@@ -42,5 +42,11 @@ namespace AlgorithmsBenchmark
         {
             return Algorithms.Algorithms.TwoCrystalBalls(breaks);
         }
+
+        [Benchmark]
+        public void BubbleSort()
+        {
+            Algorithms.Algorithms.BubbleSort(data);
+        }
     }
 }
