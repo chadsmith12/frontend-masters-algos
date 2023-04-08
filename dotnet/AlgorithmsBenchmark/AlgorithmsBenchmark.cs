@@ -7,6 +7,8 @@ namespace AlgorithmsBenchmark
         private const int N = 1000;
         private readonly int[] data;
         private readonly bool[] breaks;
+        private readonly List<int> dataToSort;
+        private readonly List<int> dataToOrder;
 
         public AlgorithmsBenchmark()
         {
@@ -23,6 +25,8 @@ namespace AlgorithmsBenchmark
             {
                 breaks[i] = i >= breakValue;
             }
+            dataToSort = data.ToList();
+            dataToOrder = data.ToList();
         }
 
         [Benchmark]
