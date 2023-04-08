@@ -41,5 +41,33 @@
 
             return false;
         }
+
+        public static int TwoCrystalBalls(bool[] breaks)
+        {
+            var jumpAmount = (int)Math.Floor(Math.Sqrt(breaks.Length));
+            var i = jumpAmount;
+
+            while(i < breaks.Length)
+            {
+                if (breaks[i])
+                {
+                    return i;
+                }
+
+                i += jumpAmount;
+            }
+
+            i -= jumpAmount;
+
+            for (var j = 0; j < jumpAmount && i < breaks.Length; ++j, ++i)
+            {
+                if (breaks[i])
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
     }
 }

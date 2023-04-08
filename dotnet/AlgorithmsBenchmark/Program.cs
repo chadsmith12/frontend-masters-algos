@@ -1,5 +1,3 @@
-﻿using AlgorithmsBenchmark;
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
 
-var summary = BenchmarkRunner.Run<LinearSearchBenchmark>();
-var binarySearch = BenchmarkRunner.Run<BinarySearchBenchmark>();
+var summary = BenchmarkRunner.Run<AlgorithmsBenchmark.AlgorithmsBenchmark>();
