@@ -12,38 +12,36 @@
 
         private int length = 0;
         private Node? head = null;
-        private Node? tail = null;
 
         public void Push(T value) 
         {
             var node = new Node(value);
             length++;
 
-            if (this.tail == null)
+            if (this.head == null)
             {
                 this.head = node;
-                this.tail = node;
                 return;
             }
 
-            var tail = this.tail;
-            this.tail = node;
-            this.tail.Previous = tail;
+            var head = this.head;
+            this.head = node;
+            this.head.Previous = head;
         }
 
         public T Pop() 
         {
-            if (this.tail == null)
+            if (this.head == null)
             {
                 throw new InvalidOperationException("Can not pop when stack is empty");
             }
 
             length--;
 
-            var tail = this.tail;
-            this.tail = tail.Previous;
+            var head = this.head;
+            this.head = head.Previous;
 
-            return tail.Value;
+            return head.Value;
         }
 
         public T Peek() 
