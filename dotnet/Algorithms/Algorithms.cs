@@ -85,5 +85,46 @@
                 }
             }
         }
+
+        public static void QuickSort(int[] values)
+        {
+            QuickSortInternal(values, 0, values.Length - 1);
+        }
+
+        private static void QuickSortInternal(int[] values, int low, int high)
+        {
+            if (low >= high)
+            {
+                return;
+            }
+
+            var pivotIndex = Partition(values, low, high);
+            QuickSortInternal(values, low, pivotIndex - 1);
+            QuickSortInternal(values, pivotIndex + 1, high);
+        }
+
+        private static int Partition(int[] values, int low, int high)
+        {
+            var pivot = values[high];
+            var index = low -1;
+
+            // walk from low to the high, excluding it
+            for (var i = low; i < high; ++i)
+            {
+                if (values[i] <= pivot)
+                {
+                    index++;
+                    var temp = values[i];
+                    values[i] = values[index];
+                    values[index] = temp;
+                }
+            }
+
+            index++;
+            values[high] = values[index];
+            values[index] = pivot;
+
+            return index;
+        }
     }
 }
