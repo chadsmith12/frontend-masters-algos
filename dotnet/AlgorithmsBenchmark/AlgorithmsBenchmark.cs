@@ -52,5 +52,11 @@ namespace AlgorithmsBenchmark
         {
             Algorithms.Algorithms.BubbleSort(data);
         }
+
+        [Benchmark]
+        public void QuickSort()
+        {
+            Algorithms.Algorithms.QuickSort(data);
+        }
     }
 }
